@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小辣稽的温暖狗窝</title>
+  
+  <subtitle>小辣稽的个人主页</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://milkyboat.github.com/"/>
+  <updated>2019-11-01T16:07:41.448Z</updated>
+  <id>https://milkyboat.github.com/</id>
+  
+  <author>
+    <name>MilkyBoat</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://milkyboat.github.com/2019/11/02/hello-world/"/>
+    <id>https://milkyboat.github.com/2019/11/02/hello-world/</id>
+    <published>2019-11-01T16:27:45.804Z</published>
+    <updated>2019-11-01T16:07:41.448Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
