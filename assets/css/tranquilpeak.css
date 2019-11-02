@@ -531,7 +531,7 @@ blockquote {
 #main {
   display: block;
   min-height: 100%;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.4);
   transition: transform .25s ease-in-out;
   -webkit-transition: -webkit-transform .25s ease-in-out; }
   #main.hasCover.hasCoverCaption, #main.hasCover.hasCoverMetaOut {
@@ -2256,8 +2256,11 @@ a.fancybox {
   .postShorten.postShorten--thumbnailimg-top .postShorten-thumbnailimg {
     margin-top: 5px; }
   .postShorten.postShorten--thumbnailimg-bottom .postShorten-wrap {
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
     display: block;
-    width: 100%; }
+    width: -webkit-calc(100% - 50px);
+    width: -moz-calc(100% - 50px); }
   .postShorten.postShorten--thumbnailimg-bottom .postShorten-excerpt > p {
     margin-bottom: 0; }
   .postShorten.postShorten--thumbnailimg-bottom .postShorten-thumbnailimg {
