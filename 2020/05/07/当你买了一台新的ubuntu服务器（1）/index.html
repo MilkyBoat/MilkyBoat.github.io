@@ -1,141 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="小辣稽严格挑剔狗粮的个人主页">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon"
+        href="/image/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="小辣稽" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        小辣稽
+    </title>
 
-  
-  <title>当你买了台新的ubuntu服务器(1) | 小辣稽的温暖狗窝</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
-  <meta name="keywords" content="blog,hexo,javascript" />
-  
-  <meta name="description" content="当你买了台新服务器-ubuntu服务器常见设置创建新用户! 操作服务器绝对不要天天用root，迟早会出事，所以新服务器第一件事情就是来个普通权限的用户。  （以下指令均在root权限下运行） 1$ adduser ubuntu  其中ubuntu可以替换为你想要的用户名，之后输入密码（不会显示在屏幕上，盲输就行），然后输入用户信息就可以了。然后分配sudo权限：  1$ visudo  这里没有漏">
-<meta name="keywords" content="服务器 运维 服务器配置">
-<meta property="og:type" content="article">
-<meta property="og:title" content="当你买了台新的ubuntu服务器(1)">
-<meta property="og:url" content="https:&#x2F;&#x2F;milkyboat.github.io&#x2F;2020&#x2F;05&#x2F;07&#x2F;%E5%BD%93%E4%BD%A0%E4%B9%B0%E4%BA%86%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%881%EF%BC%89&#x2F;index.html">
-<meta property="og:site_name" content="小辣稽的温暖狗窝">
-<meta property="og:description" content="当你买了台新服务器-ubuntu服务器常见设置创建新用户! 操作服务器绝对不要天天用root，迟早会出事，所以新服务器第一件事情就是来个普通权限的用户。  （以下指令均在root权限下运行） 1$ adduser ubuntu  其中ubuntu可以替换为你想要的用户名，之后输入密码（不会显示在屏幕上，盲输就行），然后输入用户信息就可以了。然后分配sudo权限：  1$ visudo  这里没有漏">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-05-07T05:58:51.514Z">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="小辣稽的温暖狗窝" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/images/icon.jpg">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/highlight.css">
-</head>
+    <link rel="canonical" href="https://milkyboat.github.io/2020/05/07/当你买了一台新的ubuntu服务器（1）/">
 
-<body>
-  <div id="fullpage" class="mobile-nav-right">
+    <!-- Bootstrap Core CSS -->
     
-      <div id="wrapper" style="background-image: url(/images/cover.jpg)" title="小辣稽的温暖狗窝">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
     
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
     
-      <header id="header">
-  <div id="nav-toggle" class="nav-toggle"></div>
-  <div class="head-box global-width">
-    <nav class="nav-box nav-right">
-      
-        <a class="nav-item" href="/" title
-        
-        >首页</a>
-      
-        <a class="nav-item" href="/archives" title
-        
-        >归档</a>
-      
-    </nav>
-  </div>
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<style>
+    header.intro-header {
+        background-image: url('/image/cover.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="animated fadeIn">
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true"
+    data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    小辣稽
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/categories/">categories</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">tags</a>
+                    </li>
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    //    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        } else {
+            // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+    <!-- Main Content -->
+    
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="/image/cover-v1.2.0.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('/image/cover-v1.2.0.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>当你买了台新的ubuntu服务器(1)</h1>
+                    
+                    <span class="meta">
+                         作者 徐云凯
+                        <span>
+                          日期 2020-05-07
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#服务器"
+                           title="服务器">服务器</a>
+                        
+                        <a class="tag" href="/tags/#运维"
+                           title="运维">运维</a>
+                        
+                        <a class="tag" href="/tags/#服务器配置"
+                           title="服务器配置">服务器配置</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            当你买了台新的ubuntu服务器(1)
+        </span>
+    </div>
 </header>
-      <div id="middlecontent" title class="global-width sidebar-left">
-        <section id="main"><article id="post-当你买了一台新的ubuntu服务器（1）" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 class="article-title" itemprop="name">
-      当你买了台新的ubuntu服务器(1)
-    </h1>
-  
 
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/05/07/%E5%BD%93%E4%BD%A0%E4%B9%B0%E4%BA%86%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%881%EF%BC%89/" class="article-date">
-  <time datetime="2020-05-07T02:39:02.000Z" itemprop="datePublished">2020-05-07</time>
-</a>
-    
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%90%E7%BB%B4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" rel="tag">服务器 运维 服务器配置</a></li></ul>
-
-  </div>
-  
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-    </span>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="当你买了台新服务器-ubuntu服务器常见设置"><a href="#当你买了台新服务器-ubuntu服务器常见设置" class="headerlink" title="当你买了台新服务器-ubuntu服务器常见设置"></a>当你买了台新服务器-ubuntu服务器常见设置</h1><h2 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户!"></a>创建新用户!</h2><blockquote>
-<p>操作服务器绝对不要天天用root，迟早会出事，所以新服务器第一件事情就是来个普通权限的用户。</p>
-</blockquote>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="当你买了台新服务器-ubuntu服务器常见设置"><a href="#当你买了台新服务器-ubuntu服务器常见设置" class="headerlink" title="当你买了台新服务器-ubuntu服务器常见设置"></a>当你买了台新服务器-ubuntu服务器常见设置</h1><h2 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户!"></a>创建新用户!</h2><p>操作服务器绝对不要天天用root，迟早会出事，所以新服务器第一件事情就是来个普通权限的用户。</p>
 <p>（以下指令均在root权限下运行）</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser ubuntu</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adduser ubuntu</span><br></pre></td></tr></table></figure>
 <p>其中ubuntu可以替换为你想要的用户名，之后输入密码（不会显示在屏幕上，盲输就行），然后输入用户信息就可以了。然后分配sudo权限：</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ visudo</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ visudo</span><br></pre></td></tr></table></figure>
 <p>这里没有漏空格，就是visudo，进去之后是专门的编辑器，编辑模式默认是插入，找到“root ALL=(ALL:ALL) ALL”这一行，在下面加上这一行，同样的，ubuntu替换为你的用户名</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu ALL=(ALL:ALL) ALL</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu ALL&#x3D;(ALL:ALL) ALL</span><br></pre></td></tr></table></figure>
 <p>这个奇奇怪怪的编辑器使用ctrl+o（然后再按enter）保存，ctrl+c取消，ctrl+x退出。然后使用</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su ubuntu</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su ubuntu</span><br></pre></td></tr></table></figure>
 <p>切换到刚刚创建的用户。</p>
-</blockquote>
 <p>此外创建用户还有“useradd”命令，但是用这个创建命令似乎不能单独登录，不要用就是了。</p>
 <hr>
-<h2 id="延长ssh自动断开时间"><a href="#延长ssh自动断开时间" class="headerlink" title="延长ssh自动断开时间"></a>延长ssh自动断开时间</h2><blockquote>
-<p>如果通过终端ssh连接服务器时，当鼠标和键盘长时间不操作，服务器就会自动断开连接。</p>
-</blockquote>
+<h2 id="延长ssh自动断开时间"><a href="#延长ssh自动断开时间" class="headerlink" title="延长ssh自动断开时间"></a>延长ssh自动断开时间</h2><p>如果通过终端ssh连接服务器时，当鼠标和键盘长时间不操作，服务器就会自动断开连接。</p>
 <ul>
-<li>方法一、<br>修改/etc/ssh/sshd_config配置文件，找到ClientAliveCountMax（单位为分钟）修改为所需要的值，然后执行<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service sshd reload</span><br></pre></td></tr></table></figure></div></li>
-<li>方法二、<br>找到所在用户的.ssh目录,如root用户该目录在：/root/.ssh/,在该目录创建config文件<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi /root/.ssh/config</span><br></pre></td></tr></table></figure></div>
+<li>方法一、<br>修改/etc/ssh/sshd_config配置文件，找到ClientAliveCountMax（单位为分钟）修改为所需要的值，然后执行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service sshd reload</span><br></pre></td></tr></table></figure></li>
+<li>方法二、<br>找到所在用户的.ssh目录,如root用户该目录在：/root/.ssh/,在该目录创建config文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi /root/.ssh/config</span><br></pre></td></tr></table></figure>
 加入下面一句：ServerAliveInterval 60 保存退出，再ssh服务器的时候，不会因为长时间操作断开。加入这句之后，ssh客户端会每隔一段时间自动与ssh服务器通信一次，所以长时间操作不会断开。</li>
-<li>方法三、<br>修改/etc/profile配置文件<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi /etc/profile</span><br></pre></td></tr></table></figure></div>
+<li>方法三、<br>修改/etc/profile配置文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi /etc/profile</span><br></pre></td></tr></table></figure>
 增加：TMOUT=1800 这样30分钟无操作就自动LOGOUT</li>
 </ul>
 <hr>
-<h2 id="换源（仅中国大陆地区服务器需要）"><a href="#换源（仅中国大陆地区服务器需要）" class="headerlink" title="换源（仅中国大陆地区服务器需要）"></a>换源（仅中国大陆地区服务器需要）</h2><blockquote>
-<p>这里一次性汇总一下所有常见的工具的换源</p>
-</blockquote>
-<h4 id="apt-get"><a href="#apt-get" class="headerlink" title="apt-get"></a>apt-get</h4><blockquote>
-<p>先备份原始文件</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp /etc/apt/sources.list /etc/apt/sources.bak1</span><br><span class="line">#第一个参数时拷贝的文件路径和文件名称,第二个是拷贝到(粘贴)的文件路径和文件名</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<h2 id="换源（仅中国大陆地区服务器需要）"><a href="#换源（仅中国大陆地区服务器需要）" class="headerlink" title="换源（仅中国大陆地区服务器需要）"></a>换源（仅中国大陆地区服务器需要）</h2><p>这里一次性汇总一下所有常见的工具的换源</p>
+<h4 id="apt-get"><a href="#apt-get" class="headerlink" title="apt-get"></a>apt-get</h4><p>先备份原始文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.bak1</span><br><span class="line">#第一个参数时拷贝的文件路径和文件名称,第二个是拷贝到(粘贴)的文件路径和文件名</span><br></pre></td></tr></table></figure>
 <p>然后开始编辑源地址</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/apt/sources.list</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
 <p>删掉或注释掉原有的国外地址。然后去如下地址任意一个获取最新的镜像站点地址，复制到 /etc/apt/sources.list 中即可。</p>
-</blockquote>
 <ul>
 <li><p><a href="https://developer.aliyun.com/mirror/ubuntu" target="_blank" rel="noopener">阿里云开源镜像站</a></p>
 </li>
@@ -144,220 +247,272 @@
 <li><p><a href="http://mirrors.163.com/.help/ubuntu.html" target="_blank" rel="noopener">网易开源镜像站</a></p>
 </li>
 </ul>
-<blockquote>
 <p>换源之后进行软件包更新（可选）</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line"><span class="comment"># 这个命令，会访问源列表里的每个网址，并读取软件列表，然后保存在本地电脑。</span></span><br><span class="line">$ sudo apt-get upgrade</span><br><span class="line"><span class="comment"># 这个命令，会把本地已安装的软件，与刚下载的软件列表里对应软件进行对比，如果发现已安装的软件版本太低，就会提示你更新。如果你的软件都是最新版本，会提示：</span></span><br><span class="line"><span class="comment"># 升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。</span></span><br></pre></td></tr></table></figure></div>
-<h4 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h4><blockquote>
-<p>新服务器最好检查一下python版本，推荐使用3.7，如果python版本过低，使用如下步骤升级。我的服务器是 ubuntu 16 预装 python 3.5，这里升级到python 3.7</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install zlib1g-dev libbz2-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb-dev libpcap-dev xz-utils libexpat1-dev liblzma-dev libffi-dev libc6-dev</span><br><span class="line"><span class="comment"># 安装依赖包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $ mkdir package # 创建新的文件夹保存包（可选）</span></span><br><span class="line"><span class="comment"># $ cd package</span></span><br><span class="line"></span><br><span class="line">$ wget <span class="string">'https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz'</span></span><br><span class="line"><span class="comment"># 官网下载安装包</span></span><br><span class="line">$ tar zxvf Python-3.7.3.tgz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">$ <span class="built_in">cd</span> Python-3.7.3</span><br><span class="line">$ sudo mkdir -p /usr/<span class="built_in">local</span>/python3</span><br><span class="line"><span class="comment"># 创建安装目标文件夹</span></span><br><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/python3  --<span class="built_in">enable</span>-optimizations</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 删除软链接</span></span><br><span class="line"><span class="comment"># 先执行查看版本，如果有则证明软链接已存在，需要先删去以前的再重新建立</span></span><br><span class="line">$ sudo rm -rf /usr/bin/python3</span><br><span class="line">$ sudo rm -rf /usr/bin/pip3</span><br><span class="line"></span><br><span class="line"><span class="comment">##建立新的软连接</span></span><br><span class="line"><span class="comment">#添加python3的软链接</span></span><br><span class="line">$ sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="comment">#添加 pip3 的软链接</span></span><br><span class="line">$ sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测版本</span></span><br><span class="line">$ python3 -V</span><br><span class="line">$ pip3 -V</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line"><span class="comment"># 这个命令，会访问源列表里的每个网址，并读取软件列表，然后保存在本地电脑。</span></span><br><span class="line">$ sudo apt-get upgrade</span><br><span class="line"><span class="comment"># 这个命令，会把本地已安装的软件，与刚下载的软件列表里对应软件进行对比，如果发现已安装的软件版本太低，就会提示你更新。如果你的软件都是最新版本，会提示：</span></span><br><span class="line"><span class="comment"># 升级了 0 个软件包，新安装了 0 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。</span></span><br></pre></td></tr></table></figure>
+<h4 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h4><p>新服务器最好检查一下python版本，推荐使用3.7，如果python版本过低，使用如下步骤升级。我的服务器是 ubuntu 16 预装 python 3.5，这里升级到python 3.7</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install zlib1g-dev libbz2-dev libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb-dev libpcap-dev xz-utils libexpat1-dev liblzma-dev libffi-dev libc6-dev</span><br><span class="line"><span class="comment"># 安装依赖包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $ mkdir package # 创建新的文件夹保存包（可选）</span></span><br><span class="line"><span class="comment"># $ cd package</span></span><br><span class="line"></span><br><span class="line">$ wget <span class="string">'https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz'</span></span><br><span class="line"><span class="comment"># 官网下载安装包</span></span><br><span class="line">$ tar zxvf Python-3.7.3.tgz</span><br><span class="line"><span class="comment"># 解压</span></span><br><span class="line">$ <span class="built_in">cd</span> Python-3.7.3</span><br><span class="line">$ sudo mkdir -p /usr/<span class="built_in">local</span>/python3</span><br><span class="line"><span class="comment"># 创建安装目标文件夹</span></span><br><span class="line"><span class="comment"># ！！！注意！！！这里使用 usr 目录会导致 pip 安装一些包的时候需要管理员权限，如果不需要多用户使用可以安装到 /home/ubuntu/python3 目录</span></span><br><span class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/python3  --<span class="built_in">enable</span>-optimizations</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 删除软链接</span></span><br><span class="line"><span class="comment"># 先执行查看版本，如果有则证明软链接已存在，需要先删去以前的再重新建立</span></span><br><span class="line">$ sudo rm /usr/bin/python3</span><br><span class="line">$ sudo rm /usr/bin/pip3</span><br><span class="line"><span class="comment"># 注意，只能删除软连接，不要把老版本 python 目录删掉！！！切记！！！</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##建立新的软连接</span></span><br><span class="line"><span class="comment">#添加python3的软链接</span></span><br><span class="line">$ sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/python3.7 /usr/bin/python3</span><br><span class="line"><span class="comment">#添加 pip3 的软链接</span></span><br><span class="line">$ sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/pip3.7 /usr/bin/pip3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测版本</span></span><br><span class="line">$ python3 -V</span><br><span class="line">$ pip3 -V</span><br></pre></td></tr></table></figure>
 
-<blockquote>
 <p>新服务器默认没有pip，使用如下指令安装，已经安装了的可以跳过</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python3-pip</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python3-pip</span><br></pre></td></tr></table></figure>
 
-<blockquote>
 <p>确定安装好pip之后，找到如下文件</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.pip/pip.conf</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.pip&#x2F;pip.conf</span><br></pre></td></tr></table></figure>
 
-<blockquote>
 <p>vi编辑添加（这里为阿里云镜像）</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url &#x3D; https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host&#x3D;mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="安装java"><a href="#安装java" class="headerlink" title="安装java"></a>安装java</h2><blockquote>
-<p>2019年起，oracal将官方的jdk设为付费下载，所以推荐安装open-jdk，版本方面推荐java-8（1.8）。</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install default-jdk      <span class="comment"># java 10</span></span><br><span class="line">$ sudo apt install openjdk-8-jdk    <span class="comment"># java 8</span></span><br></pre></td></tr></table></figure></div>
-<blockquote>
-<p>如果一定要使用oracal的原版jdk的话，必须自己下载安装包，这里举例 jdk-8u221-linux-x64.tar.gz </p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir /usr/lib/java</span><br><span class="line">$ sudo tar -zxvf jdk-8u212-linux-x64.tar.gz -C /usr/lib/java</span><br><span class="line">$ sudo gedit ~/.bashrc  <span class="comment"># 修改环境变量</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="安装java"><a href="#安装java" class="headerlink" title="安装java"></a>安装java</h2><p>2019年起，oracal将官方的jdk设为付费下载，所以推荐安装open-jdk，版本方面推荐java-8（1.8）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install default-jdk      <span class="comment"># java 10</span></span><br><span class="line">$ sudo apt install openjdk-8-jdk    <span class="comment"># java 8</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>文件尾追加以下内容</p>
+<p>如果使用 open jdk ，以上指令任选其一即可直接完成，以下所有步骤仅原版jdk安装需要<br>如果一定要使用oracal的原版jdk的话，必须自己下载安装包，这里举例 jdk-8u221-linux-x64.tar.gz </p>
 </blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># set oracle jdk environment</span><br><span class="line">export JAVA_HOME=/usr/lib/java/jdk1.8.0_212 ## 这里的目录换成自己解压的jdk 目录</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  </span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib  </span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir /usr/lib/java</span><br><span class="line">$ sudo tar -zxvf jdk-8u212-linux-x64.tar.gz -C /usr/lib/java</span><br><span class="line">$ sudo gedit ~/.bashrc  <span class="comment"># 修改环境变量</span></span><br></pre></td></tr></table></figure>
 
+<p>文件尾追加以下内容（open-jdk不需要）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># set oracle jdk environment</span><br><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;lib&#x2F;java&#x2F;jdk1.8.0_212 ## 这里的目录换成自己解压的jdk 目录</span><br><span class="line">export JRE_HOME&#x3D;$&#123;JAVA_HOME&#125;&#x2F;jre  </span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib  </span><br><span class="line">export PATH&#x3D;$&#123;JAVA_HOME&#125;&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
 
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="comment"># 使环境变量生效</span></span><br><span class="line">$ sudo update-alternatives --install /usr/bin/java java /usr/lib/java/jdk1.8.0_212/bin/java 300</span><br><span class="line"><span class="comment"># 系统注册此jdk（300为优先级）</span></span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br><span class="line"><span class="comment"># 使环境变量生效（open-jdk不需要）</span></span><br><span class="line">$ sudo update-alternatives --install /usr/bin/java java /usr/lib/java/jdk1.8.0_212/bin/java 300</span><br><span class="line"><span class="comment"># 系统注册此jdk（300为优先级）</span></span><br></pre></td></tr></table></figure>
 
-<blockquote>
 <p>如果我们在服务器上安装了多个Java版本，我们可以使用update-alternatives系统更改默认版本：</p>
-</blockquote>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config java</span><br></pre></td></tr></table></figure></div>
-<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config java</span><br></pre></td></tr></table></figure>
 <p>在随后的界面中输入序号并回车以切换默认jdk</p>
-</blockquote>
+<hr>
+<h2 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install php</span><br></pre></td></tr></table></figure>
 
-      
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/05/07/当你买了一台新的ubuntu服务器（2）/" data-toggle="tooltip" data-placement="top"
+                           title="当你买了台新的ubuntu服务器(2)">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2019/11/02/小辣稽的第一篇博客：写在20岁生日之时/" data-toggle="tooltip" data-placement="top"
+                           title="小辣稽的第一篇博客：写在20岁生日之时">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#当你买了台新服务器-ubuntu服务器常见设置"><span class="toc-text">当你买了台新服务器-ubuntu服务器常见设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建新用户"><span class="toc-text">创建新用户!</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#延长ssh自动断开时间"><span class="toc-text">延长ssh自动断开时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#换源（仅中国大陆地区服务器需要）"><span class="toc-text">换源（仅中国大陆地区服务器需要）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#apt-get"><span class="toc-text">apt-get</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pip"><span class="toc-text">pip</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装java"><span class="toc-text">安装java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装php"><span class="toc-text">安装php</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#服务器"
+                           title="服务器">服务器</a>
+                        
+                        <a class="tag" href="/tags/#运维"
+                           title="运维">运维</a>
+                        
+                        <a class="tag" href="/tags/#服务器配置"
+                           title="服务器配置">服务器配置</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-    
-      <footer class="article-footer">
-        完
-      </footer>
-    
-  </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2019/11/02/%E5%B0%8F%E8%BE%A3%E7%A8%BD%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%86%99%E5%9C%A820%E5%B2%81%E7%94%9F%E6%97%A5%E4%B9%8B%E6%97%B6/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">小辣稽的第一篇博客：写在20岁生日之时</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
-
-    <link rel="stylesheet" href="/css/gitment.css"> 
-<script src="/js/gitment.js"></script>
-
-<div id="gitmentContainer"></div>
-
-<script>
-var gitment = new Gitment({
-  owner: '',
-  repo: '',
-  oauth: {
-    client_id: '',
-    client_secret: '',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
-  
-  
 </article>
-</section>
-        <aside id="sidebar">
-  
-    <div class="widget-box">
-  <div class="avatar-box">
-    <img class="avatar" src="/images/default-avatar.jpg" title="本汪的帅照"></img>
-    <h3 class="avatar-name">
-      
-        小辣稽毫不挑剔狗粮
-      
-    </h3>
-    <p class="avatar-slogan">
-      一只挑不动狗粮的纯种小柴犬。
-    </p>
-  </div>
-</div>
 
 
-  
-    
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%90%E7%BB%B4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" rel="tag">服务器 运维 服务器配置</a></li></ul>
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/shipMilky">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/小辣稽">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/辣稽辣稽">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/徐云凯">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/MilkyBoat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 小辣稽 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%90%E7%BB%B4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">服务器 运维 服务器配置</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/05/07/%E5%BD%93%E4%BD%A0%E4%B9%B0%E4%BA%86%E4%B8%80%E5%8F%B0%E6%96%B0%E7%9A%84ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%881%EF%BC%89/">当你买了台新的ubuntu服务器(1)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/02/%E5%B0%8F%E8%BE%A3%E7%A8%BD%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%9A%E5%86%99%E5%9C%A820%E5%B2%81%E7%94%9F%E6%97%A5%E4%B9%8B%E6%97%B6/">小辣稽的第一篇博客：写在20岁生日之时</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/02/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-      <div class="widget-box">
-    <h3 class="widget-title">友链</h3>
-    <div class="widget">
-      
-    </div>
-  </div>
-
-  
-</aside>
-      </div>
-      <footer id="footer">
-  <div class="foot-box global-width">
-    &copy; 2020 MilkyBoat &nbsp;&nbsp;
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity" target="_blank" rel="noopener">antiquity</a>
-    <br>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
-  </div>
 </footer>
-      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
 <script>
-if (!window.jQuery) {
-var script = document.createElement('script');
-script.src = "/js/jquery-2.0.3.min.js";
-document.body.write(script);
-}
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
 </script>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://milkyboat.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
 
 
-<script src="/js/script.js"></script>
+
+<!-- Google Analytics -->
 
 
 
-    </div>
-    <nav id="mobile-nav" class="mobile-nav-box">
-  <div class="mobile-nav-img mobile-nav-top"></div>
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-  <div class="mobile-nav-img  mobile-nav-bottom"></div>
-</nav>    
-  </div>
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="/image/icon.jpg">
 </body>
+
 </html>

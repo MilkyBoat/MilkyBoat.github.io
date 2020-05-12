@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="小辣稽严格挑剔狗粮的个人主页">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon"
+        href="/image/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="小辣稽" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        小辣稽
+    </title>
+
+    <link rel="canonical" href="https://milkyboat.github.io/2020/05/07/当你买了一台新的ubuntu服务器（2）/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<style>
+    header.intro-header {
+        background-image: url('/image/cover.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="animated fadeIn">
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true"
+    data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    小辣稽
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/categories/">categories</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">tags</a>
+                    </li>
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    //    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        } else {
+            // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+    <!-- Main Content -->
+    
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="/image/cover-v1.2.0.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('/image/cover-v1.2.0.jpg')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>当你买了台新的ubuntu服务器(2)</h1>
+                    
+                    <span class="meta">
+                         作者 徐云凯
+                        <span>
+                          日期 2020-05-07
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#服务器"
+                           title="服务器">服务器</a>
+                        
+                        <a class="tag" href="/tags/#运维"
+                           title="运维">运维</a>
+                        
+                        <a class="tag" href="/tags/#服务器配置"
+                           title="服务器配置">服务器配置</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            当你买了台新的ubuntu服务器(2)
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="当你买了台新服务器-ubuntu服务器常见设置"><a href="#当你买了台新服务器-ubuntu服务器常见设置" class="headerlink" title="当你买了台新服务器-ubuntu服务器常见设置"></a>当你买了台新服务器-ubuntu服务器常见设置</h1><h2 id="安装各种服务器软件"><a href="#安装各种服务器软件" class="headerlink" title="安装各种服务器软件"></a>安装各种服务器软件</h2><h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，直接使用ip地址访问服务器，就可以看到nginx的默认欢迎页面了。</p>
+<blockquote>
+<p>如果安装报错比如80端口占用，说明此前安装了其它网络服务器，建议全都关掉再安装，并且让nginx独占80端口作为反向代理服务器</p>
+</blockquote>
+<p>安装完成之后配置反向代理，使用whereis nginx命令找到配置文件所在文件夹，找到nginx.conf后进行如下修改（记得备份该文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ whereis nginx</span><br><span class="line"><span class="comment"># 显示nginx相关目录，挨个看看找到nginx.conf的位置，不同的系统可能不一样</span></span><br><span class="line">$ <span class="built_in">cd</span> /etc/nginx  <span class="comment"># 我的nginx配置在这里，不同版本会有区别</span></span><br><span class="line">$ sudo cp nginx.conf nginx.conf.bk  <span class="comment"># 备份</span></span><br><span class="line">$ sudo vi nginx.conf</span><br></pre></td></tr></table></figure>
+<p>我的配置如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">############### nginx.conf ###############</span><br><span class="line">user www-data;</span><br><span class="line">worker_processes auto;</span><br><span class="line">pid &#x2F;run&#x2F;nginx.pid;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">	use epoll;</span><br><span class="line">	worker_connections 51200;</span><br><span class="line">	multi_accept on;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Basic Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	sendfile on;</span><br><span class="line">	tcp_nopush on;</span><br><span class="line">	tcp_nodelay on;</span><br><span class="line">	keepalive_timeout 65;</span><br><span class="line">	types_hash_max_size 2048;</span><br><span class="line">	server_tokens off;</span><br><span class="line"></span><br><span class="line">	server_names_hash_bucket_size 64;</span><br><span class="line">	# server_name_in_redirect off;</span><br><span class="line"></span><br><span class="line">	include &#x2F;etc&#x2F;nginx&#x2F;mime.types;</span><br><span class="line">	default_type application&#x2F;octet-stream;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# SSL Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE</span><br><span class="line">	ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Logging Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	access_log &#x2F;data&#x2F;wwwlogs&#x2F;nginx&#x2F;access.log;</span><br><span class="line">	error_log &#x2F;data&#x2F;wwwlogs&#x2F;nginx&#x2F;error.log;</span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Gzip Settings</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	gzip on;</span><br><span class="line">	gzip_disable &quot;msie6&quot;;</span><br><span class="line"></span><br><span class="line">	gzip_vary on;</span><br><span class="line">	gzip_proxied any;</span><br><span class="line">	gzip_comp_level 6;</span><br><span class="line">	gzip_buffers 16 8k;</span><br><span class="line">	gzip_http_version 1.1;</span><br><span class="line">	gzip_types text&#x2F;plain text&#x2F;css application&#x2F;json application&#x2F;javascript text&#x2F;xml application&#x2F;xml application&#x2F;xml+rss text&#x2F;javascript;</span><br><span class="line"></span><br><span class="line">############# basic web #############</span><br><span class="line"></span><br><span class="line">	server &#123;</span><br><span class="line">		listen 80;  # 监听80端口</span><br><span class="line">		# server_name milkyship.cn  www.milkyship.cn;</span><br><span class="line">		access_log &#x2F;data&#x2F;wwwlogs&#x2F;nginx&#x2F;access.log combined;  # 日志文件位置</span><br><span class="line">		root &#x2F;data&#x2F;wwwroot;  # 网页根目录</span><br><span class="line">		index index.html index.php index.jsp; # 主页文件</span><br><span class="line"></span><br><span class="line">		#error_page 404 &#x2F;404.html;</span><br><span class="line">		#error_page 502 &#x2F;502.html;</span><br><span class="line"></span><br><span class="line">		location &#x2F;nginx_status &#123;</span><br><span class="line">			stub_status on;</span><br><span class="line">			access_log off;</span><br><span class="line">			allow 127.0.0.1;</span><br><span class="line">			deny all;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		location ~ .*\.(gif|jpg|jpeg|png|bmp|mp3|wma|wmv|swf|flv|mp4|mkv|avi|ico|txt|pdf|rar|zip|7z|gz)$ &#123;</span><br><span class="line">			expires 30d;</span><br><span class="line">			access_log off;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		location ~ .*\.(js|css)?$ &#123;</span><br><span class="line">			expires 7d;</span><br><span class="line">			access_log off;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		location ~ .*\.[(php)(html)(htm)]$ &#123;</span><br><span class="line">			proxy_pass http:&#x2F;&#x2F;127.0.0.1:8090;  # 转发Apache服务器</span><br><span class="line">			proxy_next_upstream http_502 http_504 error timeout invalid_header;</span><br><span class="line">			proxy_set_header Host $host;</span><br><span class="line">			proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; </span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		location ~ ^&#x2F;(\.user.ini|\.ht|\.git|\.svn|\.project|LICENSE|README.md) &#123;</span><br><span class="line">			deny all;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		location ~.*$ &#123;</span><br><span class="line">      			proxy_pass http:&#x2F;&#x2F;127.0.0.1:8080;  # 转发TomCat服务器</span><br><span class="line">			# include proxy.conf;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	##</span><br><span class="line">	# Virtual Host Configs</span><br><span class="line">	##</span><br><span class="line"></span><br><span class="line">	include &#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;*.conf;</span><br><span class="line">	include &#x2F;etc&#x2F;nginx&#x2F;sites-enabled&#x2F;*;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service nginx restart</span><br></pre></td></tr></table></figure>
+<p>重启nginx服务器，如果报错，检查刚刚设置过程中有没有拼写错误，设置的网站根目录有没有建立好</p>
+<h4 id="apache"><a href="#apache" class="headerlink" title="apache"></a>apache</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>！！！下方操作前记得备份！！！</p>
+</blockquote>
+<p>安装完成后在 /etc/apache2/ports.conf 中修改所有的80到8090，443到8091以避开nginx监听端口</p>
+<p>再在 /etc/apache2/sites-enabled/000-default.conf 中修改DocumentRoot到个人的网站根目录</p>
+<p>最后使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service apache2 restart</span><br></pre></td></tr></table></figure>
+<p>重启apache服务器，如果报错，检查刚刚设置过程中有没有拼写错误，设置的网站根目录有没有建立好</p>
+<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install tomcat8</span><br><span class="line">$ service tomcat8 start</span><br></pre></td></tr></table></figure>
+<p>这里没什么配置要改，前面该改的都弄好了</p>
+<p>现在服务器上有3个web服务器在运行，nginx监听80端口做前台反向代理，apache监听8090端口做php服务器，tomcat监听8080端口做java服务器，并且使用的时候使用nginx正则匹配url分配流量到正确的服务器上（这个还需要后面进一步设置）</p>
+<h4 id="ftp"><a href="#ftp" class="headerlink" title="ftp"></a>ftp</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install vsftpd</span><br><span class="line">$ sudo vi /etc/vsftpd.conf  <span class="comment"># 进入配置</span></span><br></pre></td></tr></table></figure>
+<p>文件尾追加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#配置ftp服务器的上传下载文件所在的目录。</span><br><span class="line">local_root&#x3D;&#x2F;home&#x2F;ftpfile</span><br></pre></td></tr></table></figure>
+<p>如果想要使用管理员权限登入以访问非ftp指定目录，在配置文件中找到如下属性，如下修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chroot_local_user&#x3D;YES</span><br><span class="line">chroot_list_enable&#x3D;YES</span><br><span class="line"># (default follows) 允许chroot_list文件中配置的用户登录此ftp服务器。</span><br><span class="line">chroot_list_file&#x3D;&#x2F;etc&#x2F;vsftpd.chroot_list # 本行需要新增</span><br></pre></td></tr></table></figure>
+<p>随后配置允许管理员权限登入的用户，每行写入一个允许管理员权限登入的用户的用户名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/vsftpd.chroot_list</span><br></pre></td></tr></table></figure>
+<p>最后重启ftp服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service vsftpd restart</span><br></pre></td></tr></table></figure>
+<p>此时便可以使用ftp工具登录服务器进行文件传输</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/05/08/服务器一键配置ssr/" data-toggle="tooltip" data-placement="top"
+                           title="服务器一键配置ssr">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/05/07/当你买了一台新的ubuntu服务器（1）/" data-toggle="tooltip" data-placement="top"
+                           title="当你买了台新的ubuntu服务器(1)">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#当你买了台新服务器-ubuntu服务器常见设置"><span class="toc-text">当你买了台新服务器-ubuntu服务器常见设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装各种服务器软件"><span class="toc-text">安装各种服务器软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#apache"><span class="toc-text">apache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tomcat"><span class="toc-text">tomcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ftp"><span class="toc-text">ftp</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#服务器"
+                           title="服务器">服务器</a>
+                        
+                        <a class="tag" href="/tags/#运维"
+                           title="运维">运维</a>
+                        
+                        <a class="tag" href="/tags/#服务器配置"
+                           title="服务器配置">服务器配置</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/shipMilky">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/小辣稽">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/辣稽辣稽">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/徐云凯">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/MilkyBoat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 小辣稽 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://milkyboat.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="/image/icon.jpg">
+</body>
+
+</html>
