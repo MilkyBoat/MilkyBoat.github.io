@@ -21,7 +21,7 @@
         小辣稽
     </title>
 
-    <link rel="canonical" href="https://milkyboat.github.io/2020/05/08/服务器一键配置ssr/">
+    <link rel="canonical" href="https://milkyboat.github.io/2020/07/19/以太坊与truffle开发平台环境搭建/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -175,21 +175,15 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>服务器一键配置ssr</h1>
+                    <h1>以太坊与truffle开发平台环境搭建</h1>
                     
                     <span class="meta">
                          作者 徐云凯
                         <span>
-                          日期 2020-05-08
+                          日期 2020-07-19
                          </span>
                     </span>
                     <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#服务器"
-                           title="服务器">服务器</a>
-                        
-                        <a class="tag" href="/tags/#服务器配置"
-                           title="服务器配置">服务器配置</a>
                         
                     </div>
                 </div>
@@ -198,7 +192,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            服务器一键配置ssr
+            以太坊与truffle开发平台环境搭建
         </span>
     </div>
 </header>
@@ -209,48 +203,83 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="服务器一键配置ssr"><a href="#服务器一键配置ssr" class="headerlink" title="服务器一键配置ssr"></a>服务器一键配置ssr</h1><h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><blockquote>
-<p>要求系统支持 wget 命令，如果有wget命令直接开始下一步，如果不支持需要使用以下命令安装</p>
+                <h1 id="以太坊与truffle开发平台环境搭建"><a href="#以太坊与truffle开发平台环境搭建" class="headerlink" title="以太坊与truffle开发平台环境搭建"></a>以太坊与truffle开发平台环境搭建</h1><h2 id="以太坊是什么"><a href="#以太坊是什么" class="headerlink" title="以太坊是什么"></a>以太坊是什么</h2><p><a href="https://ethereum.org/zh/" target="_blank" rel="noopener">以太坊（Ethereum）</a>，一个集成的区块链环境，支持通过<a href="https://solidity-cn.readthedocs.io/zh/develop/" target="_blank" rel="noopener">solidity语言</a>编写智能合约并编译部署到区块链上，理论上可以实现所有高级语言能够实现的功能。</p>
+<p>以太坊基于一个区块链上的虚拟机运作（EVM）。这为其提供了足够高的灵活性，但是这个虚拟机的性能损耗较高。此外，由于这个虚拟机的许多机制并不完善，使得solidity语言也存在着许多缺陷（如局部变量不能超过16个，public型函数不能返回结构体等）。</p>
+<p>总的来说，以太坊已经是目前最好用的区块链平台之一，适合于实现一些对区块链的扩展功能。</p>
+<h2 id="truffle是什么"><a href="#truffle是什么" class="headerlink" title="truffle是什么"></a>truffle是什么</h2><p><a href="https://www.trufflesuite.com/" target="_blank" rel="noopener">truffle</a>是一个以太坊的开发框架，里面集成了以太坊本体，solidity编译器与以太坊控制台等等常用功能。同时提供了一键初始化以太坊应用的功能。类似于anaconda之于python。</p>
+<p><a href="https://www.trufflesuite.com/docs/truffle/overview" target="_blank" rel="noopener">truffle官方文档</a></p>
+<p><a href="https://solidity-cn.readthedocs.io/zh/develop/" target="_blank" rel="noopener">solidity中文文档</a></p>
+<p><a href="https://solidity.readthedocs.io/en/v0.6.11/" target="_blank" rel="noopener">solidity英文原版文档</a></p>
+<blockquote>
+<p>本文后续内容均基于truffle框架</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum -y install wget  <span class="comment"># cent os</span></span><br><span class="line">$ sudo apt-get install wget  <span class="comment"># ubuntu</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="以太坊环境搭建"><a href="#以太坊环境搭建" class="headerlink" title="以太坊环境搭建"></a>以太坊环境搭建</h2><h3 id="1-安装nodejs"><a href="#1-安装nodejs" class="headerlink" title="1. 安装nodejs"></a>1. 安装nodejs</h3><p>去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs官网</a>下载对应系统的安装包。然后傻瓜式安装。</p>
+<blockquote>
+<p>ps: 以太坊官方推荐的node版本是 8.10.0LTS。但是经过实际测试，更高的版本并不会导致显著问题。本文后续均基于<strong>Node 12.14.0</strong></p>
+</blockquote>
+<p>安装完成后在命令行使用以下命令验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
 
-<p>一键安装脚本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wget https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">$ chmod +x shadowsocksR.sh</span><br><span class="line">$ ./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装truffle"><a href="#2-安装truffle" class="headerlink" title="2. 安装truffle"></a>2. 安装truffle</h3><p>安装完成nodejs之后，使用以下命令安装truffle</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install –g truffle</span><br></pre></td></tr></table></figure>
 
-<p>在脚本中设置</p>
-<ul>
-<li>端口（建议大于80小于150，方便安卓端填入）</li>
-<li>密码</li>
-<li>加密方式</li>
-<li>协议插件</li>
-<li>混淆插件（当协议为origin时，混淆必须为plain，建议不使用tls开头的混淆）</li>
-<li>设备数、单线程限速和端口总限速（建议默认）</li>
-</ul>
-<p>随后按 y 确认安装（也可能没有这一步直接开始安装）</p>
-<p>最后脚本会显示设置成功的ssr账号信息，务必妥善保存！！！！！！</p>
-<h2 id="安装ssr客户端"><a href="#安装ssr客户端" class="headerlink" title="安装ssr客户端"></a>安装ssr客户端</h2><ul>
-<li><a href="https://github.com/shadowsocksr-backup/shadowsocksr-csharp/releases" target="_blank" rel="noopener">Windows SSR客户端（需要.Net2或4框架）</a></li>
-<li><a href="https://github.com/shadowsocksr-backup/ShadowsocksX-NG/releases" target="_blank" rel="noopener">Mac SSR客户端</a></li>
-<li><a href="https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr" target="_blank" rel="noopener">Linux SSR配置脚本</a></li>
-<li><a href="https://github.com/shadowsocksr-backup/shadowsocksr-android/releases/download/3.4.0.8/shadowsocksr-release.apk" target="_blank" rel="noopener">Android SSR客户端</a></li>
-<li><a href="https://www.mediafire.com/folder/sfqz8bmodqdx5/shadowsocks%E7%9B%B8%E5%85%B3%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="noopener">所有客户端下载备用链接</a></li>
-</ul>
-<p>客户端填写之前保存的ssr账户信息，本地ip选择127.0.0.1（默认值），本地端口选择1080（默认值）</p>
-<h3 id="现在长城上就有一条专属于你的隧道了"><a href="#现在长城上就有一条专属于你的隧道了" class="headerlink" title="// 现在长城上就有一条专属于你的隧道了"></a>// 现在长城上就有一条专属于你的隧道了</h3>
+<p>注意truffle的版本，这会影响到solidity版本，不同版本的solidity语法与库函数上有较大差别。如果需要指定版本(以4.1.8为例，这个版本也是公认的最稳定，bug最少的版本)，使用<code>npm install –g truffle@4.1.8</code>即可。</p>
+<blockquote>
+<p>这一过程国内可能有网络问题，可以使用 <strong>科学上网</strong> 或者 <strong>npm换源</strong> 解决，关于npm换源请自行百度</p>
+</blockquote>
+<p>安装完成后使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ truffle version</span><br></pre></td></tr></table></figure>
+
+<p>验证安装，这里会输出truffle与其附带的solidity编译器的版本。</p>
+<h3 id="3-安装节点仿真器ganache"><a href="#3-安装节点仿真器ganache" class="headerlink" title="3. 安装节点仿真器ganache"></a>3. 安装节点仿真器ganache</h3><p>这个工具是一个专用于开发过程的区块链客户端，可以一键新建区块链账户，同时为区块链的运行过程提供了详细的log显示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install –g ganache-cli</span><br></pre></td></tr></table></figure>
+
+<p>安装完成使用以下命令验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ganache-cli</span><br></pre></td></tr></table></figure>
+
+<p>这一命令会启动一个区块链网络，默认是本地8545端口，如果没有报错，并显示了10个区块链账户的地址与密钥等信息，最后一行显示<code>Listening on 127.0.0.1:8545</code>表明安装正确，使用 Ctrl + C 退出。</p>
+<p><a href="https://github.com/trufflesuite/ganache-cli" target="_blank" rel="noopener">ganache-cli项目与相关文档</a></p>
+<h3 id="4-安装web3-js-（可选）"><a href="#4-安装web3-js-（可选）" class="headerlink" title="4. 安装web3.js （可选）"></a>4. 安装web3.js （可选）</h3><p>如果你需要使用JavaScript开发区块链应用的话，才需要进行此项目安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install –g web3@0.20.2</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>！！！ 如果此前安装的truffle是4.1.8版本，此处指定web3版本非常重要，新版本的web3与truffle 4.1.8存在兼容性问题</p>
+</blockquote>
+<h3 id="5-安装web3-py-（可选）"><a href="#5-安装web3-py-（可选）" class="headerlink" title="5. 安装web3.py （可选）"></a>5. 安装web3.py （可选）</h3><p>如果你需要使用python开发区块链应用的话，才需要进行此项目安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install web3</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://web3py.readthedocs.io/en/stable/quickstart.html#installation" target="_blank" rel="noopener">web3.py官方文档</a></p>
+<hr>
+<h2 id="建立一个简单的helloworld区块链项目"><a href="#建立一个简单的helloworld区块链项目" class="headerlink" title="建立一个简单的helloworld区块链项目"></a>建立一个简单的helloworld区块链项目</h2><p>使用<code>truffle init</code>命令下载新项目模板</p>
+<blockquote>
+<p>自2019年底，该途径疑似被墙，如果显示下载失败，可以使用<code>git clone https://github.com/truffle-box/bare-box</code>直接clone该模板项目，后续操作不变</p>
+</blockquote>
+<p>该模板已经包含一个DApp应用，使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> bare-box</span><br></pre></td></tr></table></figure>
+
+<p>命令进入该目录后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ truffle complie</span><br></pre></td></tr></table></figure>
+
+<p>编译智能合约，编译好的合约位于 ./build/contracts 目录下</p>
+<p>！！！ 后续操作将与区块链进行交互，现在使用<code>ganache-cli</code>命令启动客户端，这一过程可以加上很多参数调整区块链，详情关注<a href="https://github.com/trufflesuite/ganache-cli" target="_blank" rel="noopener">ganache-cli的github页面</a></p>
+<p>接下来部署智能合约，该过程实质上是运行了truffle complie然后执行了./migrate目录中的.js脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ truffle migrate</span><br></pre></td></tr></table></figure>
+
+<p>现在应当可以在ganache-cli中看到输出的区块信息。合约部署完成。随后启动DApp应用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+
+<p>接下来可以在<a href="http://localhost:8080" target="_blank" rel="noopener">localhost:8080</a>访问js应用</p>
+
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2020/07/19/以太坊与truffle开发平台环境搭建/" data-toggle="tooltip" data-placement="top"
-                           title="以太坊与truffle开发平台环境搭建">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2020/05/07/当你买了一台新的ubuntu服务器（2）/" data-toggle="tooltip" data-placement="top"
-                           title="当你买了台新的ubuntu服务器(2)">Next Post &rarr;</a>
+                        <a href="/2020/05/08/服务器一键配置ssr/" data-toggle="tooltip" data-placement="top"
+                           title="服务器一键配置ssr">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -269,7 +298,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#服务器一键配置ssr"><span class="toc-text">服务器一键配置ssr</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器配置"><span class="toc-text">服务器配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装ssr客户端"><span class="toc-text">安装ssr客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#现在长城上就有一条专属于你的隧道了"><span class="toc-text">&#x2F;&#x2F; 现在长城上就有一条专属于你的隧道了</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#以太坊与truffle开发平台环境搭建"><span class="toc-text">以太坊与truffle开发平台环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊是什么"><span class="toc-text">以太坊是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#truffle是什么"><span class="toc-text">truffle是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊环境搭建"><span class="toc-text">以太坊环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装nodejs"><span class="toc-text">1. 安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装truffle"><span class="toc-text">2. 安装truffle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装节点仿真器ganache"><span class="toc-text">3. 安装节点仿真器ganache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-安装web3-js-（可选）"><span class="toc-text">4. 安装web3.js （可选）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装web3-py-（可选）"><span class="toc-text">5. 安装web3.py （可选）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立一个简单的helloworld区块链项目"><span class="toc-text">建立一个简单的helloworld区块链项目</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -290,12 +319,6 @@
                         <a href="/tags/">FEATURED TAGS</a>
                     </h5>
                     <div class="tags">
-                        
-                        <a class="tag" href="/tags/#服务器"
-                           title="服务器">服务器</a>
-                        
-                        <a class="tag" href="/tags/#服务器配置"
-                           title="服务器配置">服务器配置</a>
                         
                     </div>
                 </section>
