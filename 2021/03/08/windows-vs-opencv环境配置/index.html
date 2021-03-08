@@ -21,7 +21,7 @@
         小辣稽
     </title>
 
-    <link rel="canonical" href="https://blog.milkyship.cn/2020/11/02/21岁！/">
+    <link rel="canonical" href="https://blog.milkyship.cn/2021/03/08/windows-vs-opencv环境配置/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -175,18 +175,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>21岁！</h1>
+                    <h1>windows+vs+opencv环境配置</h1>
                     
                     <span class="meta">
                          作者 徐云凯
                         <span>
-                          日期 2020-11-02
+                          日期 2021-03-08
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#日常"
-                           title="日常">日常</a>
+                        <a class="tag" href="/tags/#opencv"
+                           title="opencv">opencv</a>
                         
                     </div>
                 </div>
@@ -195,7 +195,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            21岁！
+            windows+vs+opencv环境配置
         </span>
     </div>
 </header>
@@ -206,48 +206,31 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="小辣稽21岁啦！"><a href="#小辣稽21岁啦！" class="headerlink" title="小辣稽21岁啦！"></a>小辣稽21岁啦！</h2><h2 id="2019-2020"><a href="#2019-2020" class="headerlink" title="2019-2020"></a>2019-2020</h2><p>见证历史的一年，covid-19席卷全球，第一次窝在家里度过的学期。</p>
-<ul>
-<li><h3 id="代码能力"><a href="#代码能力" class="headerlink" title="代码能力"></a>代码能力</h3><p>6月参与的实验室项目让我被逼着疯狂自学，一个星期速成solidity，速成以太坊区块链开发，反正万物皆可<b>七天-从入门到精(qi)通(keng)</b>。python的代码写的越来越6了。开学国赛顺便又把matlab拿起来复习了一下，虽然马上不用又忘得差不多了。</p>
-</li>
-<li><h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>2020年上半年打完了巫师3，刷新了对rpg类游戏的认知，原来rpg可以做到这种水平。暑假还趁着Epic史无前例的白给，试了试大名鼎鼎的GTA5，不过我觉得这个游戏对新手不是特别友好，通关线下之后就没怎么玩了，线上做了几个任务就直接搁置。</p>
-</li>
-<li><h3 id="情感"><a href="#情感" class="headerlink" title="情感"></a>情感</h3><p>无（女朋友什么的算个屁，还是二次元老婆最棒了，你说是吧祢豆子）<img src="/image/Nezuko_v.jpg" alt="小辣稽老婆美照" title="小辣稽老婆美照"></p>
-</li>
-</ul>
-<h2 id="小辣稽的成长曲线"><a href="#小辣稽的成长曲线" class="headerlink" title="小辣稽的成长曲线"></a>小辣稽的成长曲线</h2><p>例行项目！！！</p>
-<p>发际线高度居然一年高了9毫米，这有点猛啊【害怕.jpg】。</p>
-<table>
-<thead>
-<tr>
-<th align="center">时间</th>
-<th align="center">发际线高度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">2019-11-03</td>
-<td align="center">5.50 cm</td>
-</tr>
-<tr>
-<td align="center">2020-11-03</td>
-<td align="center">6.10 cm</td>
-</tr>
-</tbody></table>
+                <h1 id="windows-VisualStudio-opencv-环境配置"><a href="#windows-VisualStudio-opencv-环境配置" class="headerlink" title="windows + VisualStudio + opencv 环境配置"></a>windows + VisualStudio + opencv 环境配置</h1><blockquote>
+<p>此blog编辑于2021年3月8日，具体操作可能随版本变化而变化，注意教程时效性</p>
+</blockquote>
+<h2 id="step1：下载opencv集成包"><a href="#step1：下载opencv集成包" class="headerlink" title="step1：下载opencv集成包"></a>step1：下载opencv集成包</h2><p>点击<a href="https://opencv.org/releases/" target="_blank" rel="noopener">链接</a>下载最新版本的opencv，下载好后运行，这是一个自解压文件，解压之后的<code>opencv</code>文件夹找个地方放好，比如<code>D:\lib\opencv</code>。</p>
+<h2 id="step2：配置环境变量"><a href="#step2：配置环境变量" class="headerlink" title="step2：配置环境变量"></a>step2：配置环境变量</h2><p>依次点击：<code>此电脑</code>-&gt;顶上的<code>系统属性</code>-&gt;右边或往下滑<code>高级系统设置</code>-&gt;<code>环境变量</code></p>
+<p>然后上面的<code>用户变量</code>或下面的<code>系统变量</code>任选一个，点击新建-&gt;变量名填写<code>OPENCV</code>，变量值为<code>D:\lib\opencv\bulid</code>如果你之前选择了其它目录，这里修改”opencv\bulid”之前的内容与之一致。</p>
+<p>然后找到<code>Path</code>环境变量，如果之前选择在用户变量中添加，这里可能没有，需要新建该环境变量。然后点击<code>编辑</code>-&gt;<code>新建</code>，输入值<code>%OPENCV%\x64\vc15\bin</code></p>
+<h2 id="step3：VisualStudio-C-全局设置"><a href="#step3：VisualStudio-C-全局设置" class="headerlink" title="step3：VisualStudio C++全局设置"></a>step3：VisualStudio C++全局设置</h2><p>进入<code>C:\Users\Luczydoge\AppData\Local\Microsoft\MSBuild\v4.0</code>文件夹，其中Luczydoge是你的电脑用户名。这里面的AppData是隐藏文件夹，找不到去<code>查看</code>里面开启<code>隐藏的项目</code>选项。</p>
+<p>修改<code>Microsoft.Cpp.x64.user.props</code>文件为以下内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">DefaultTargets</span>=<span class="string">"Build"</span> <span class="attr">ToolsVersion</span>=<span class="string">"4.0"</span> <span class="attr">xmlns</span>=<span class="string">"http://schemas.microsoft.com/developer/msbuild/2003"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ImportGroup</span> <span class="attr">Label</span>=<span class="string">"PropertySheets"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ImportGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span> <span class="attr">Label</span>=<span class="string">"UserMacros"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ExecutablePath</span>&gt;</span>$(ExecutablePath)<span class="tag">&lt;/<span class="name">ExecutablePath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncludePath</span>&gt;</span>$(OpenCV)include;$(IncludePath)<span class="tag">&lt;/<span class="name">IncludePath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ReferencePath</span>&gt;</span>$(ReferencePath)<span class="tag">&lt;/<span class="name">ReferencePath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LibraryPath</span>&gt;</span>$(OpenCV)x64\vc15\lib;$(LibraryPath)<span class="tag">&lt;/<span class="name">LibraryPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">SourcePath</span>&gt;</span>$(SourcePath)<span class="tag">&lt;/<span class="name">SourcePath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ExcludePath</span>&gt;</span>$(ExcludePath)<span class="tag">&lt;/<span class="name">ExcludePath</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemDefinitionGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Link</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">AdditionalDependencies</span>&gt;</span>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opencv_world451d.lib;%(AdditionalDependencies)<span class="tag">&lt;/<span class="name">AdditionalDependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemDefinitionGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="step4：去VS试一下"><a href="#step4：去VS试一下" class="headerlink" title="step4：去VS试一下"></a>step4：去VS试一下</h2><p>打开VS，新建空项目，将顶上的解决方啊平台由<code>x86</code>改成<code>x64</code>，新建一个cpp文件，粘贴以下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> fileName = <span class="string">"test.jpg"</span>;</span><br><span class="line">	Mat <span class="built_in">image</span> = imread(fileName);</span><br><span class="line">	imshow(<span class="string">"显示图像："</span>, <span class="built_in">image</span>);</span><br><span class="line">	waitKey();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后随便找一个jpg图片放在cpp文件同一目录下，调试运行，如果能弹窗显示你刚刚放的图片说明opencv已经配置好了</p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2021/03/08/windows-vs-opencv环境配置/" data-toggle="tooltip" data-placement="top"
-                           title="windows+vs+opencv环境配置">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2020/07/19/以太坊与truffle开发平台环境搭建/" data-toggle="tooltip" data-placement="top"
-                           title="以太坊与truffle开发平台环境搭建">Next Post &rarr;</a>
+                        <a href="/2020/11/02/21岁！/" data-toggle="tooltip" data-placement="top"
+                           title="21岁！">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -266,7 +249,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#小辣稽21岁啦！"><span class="toc-text">小辣稽21岁啦！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2019-2020"><span class="toc-text">2019-2020</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码能力"><span class="toc-text">代码能力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏"><span class="toc-text">游戏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#情感"><span class="toc-text">情感</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小辣稽的成长曲线"><span class="toc-text">小辣稽的成长曲线</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-VisualStudio-opencv-环境配置"><span class="toc-text">windows + VisualStudio + opencv 环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#step1：下载opencv集成包"><span class="toc-text">step1：下载opencv集成包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step2：配置环境变量"><span class="toc-text">step2：配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step3：VisualStudio-C-全局设置"><span class="toc-text">step3：VisualStudio C++全局设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step4：去VS试一下"><span class="toc-text">step4：去VS试一下</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -288,8 +271,8 @@
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#日常"
-                           title="日常">日常</a>
+                        <a class="tag" href="/tags/#opencv"
+                           title="opencv">opencv</a>
                         
                     </div>
                 </section>
