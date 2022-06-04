@@ -91,7 +91,7 @@
                     
                     
                     <li>
-                        <a href="/archive/">archive</a>
+                        <a href="/archives/">archives</a>
                     </li>
                     
                     
@@ -168,13 +168,11 @@
         width: 100%;
         background-color: rgba(0, 0, 0, 0.16);
     }
-
     /*去掉诗歌的背景图片*/
     .custom-haojen-container .post-preview-poetry:nth-of-type(1) {
         background-image: none !important;
         background-color: rgba(255, 248, 220, 0.5);
     }
-
     .custom-haojen-container .post-preview:nth-child(1) h2,
     .custom-haojen-container .post-preview:nth-child(1) .post-meta,
     .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
@@ -185,13 +183,11 @@
         padding-left: 60px;
         padding-right: 60px;
     }
-
     .custom-haojen-container .post-preview:nth-child(1) .post-meta {
         font-size: .9em;
         font-weight: 300;
         margin-top: 0;
     }
-
     .custom-haojen-container .post-preview-poetry:nth-child(1) .post-subtitle {
         letter-spacing: 6px;
         font-size: 18px;
@@ -199,75 +195,61 @@
         font-weight: 400;
         color: rgba(0, 0, 0, .75)
     }
-
     /*不显示摘要*/
     .custom-haojen-container .post-preview:nth-child(1) .post-content-preview {
         display: none
     }
-
     /*只第一个显示背景图片*/
     .custom-haojen-container .post-preview:not(:nth-child(1)) {
         background-image: none !important;
     }
-
     /*第一个分界线去掉*/
     .custom-haojen-container hr:nth-of-type(1) {
         display: none;
     }
-
     /*主题*/
-    .custom-haojen-container .post-preview:nth-of-type(1)>a {
+    .custom-haojen-container .post-preview:nth-of-type(1) > a {
         display: table-cell;
         vertical-align: middle;
     }
-
     /*诗词标题*/
     .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
         font-size: 35px;
         font-family: STKaiti;
         color: rgba(0, 0, 0, .8);
     }
-
     .custom-haojen-container .post-preview-poetry:nth-of-type(1) .post-meta {
         color: #0e2231;
     }
-
     @media (max-width: 768px) {
         .custom-haojen-container .post-preview:nth-child(1) {
             height: 240px;
         }
-
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
             font-size: 28px !important;
             margin-top: 0;
         }
-
         .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
             font-size: 18px;
             font-weight: 400;
             padding-left: 0;
             padding-right: 0;
         }
-
-        .custom-haojen-container .post-preview:nth-of-type(1)>a {
+        .custom-haojen-container .post-preview:nth-of-type(1) > a {
             padding: 20px
         }
     }
-
     /*手机屏幕*/
     @media (max-width: 400px) {
         .custom-haojen-container .post-preview:nth-child(1) {
             height: 195px;
         }
-
         .custom-haojen-container .post-preview-poetry:nth-child(1) h2 {
             font-size: 20px !important;
         }
-
         .custom-haojen-container .post-preview:nth-child(1) .post-subtitle {
             font-size: 16px;
         }
-
         .custom-haojen-container .post-preview:nth-child(1) a {
             padding: 30px 20px;
         }
@@ -282,7 +264,7 @@
                 <div class="site-heading text-center">
                     <div class="about-me">
                         <!--移动端头部显示-->
-                        <img src="/image/icon.jpg" />
+                        <img src="/image/icon.jpg"/>
                         <h5><a href="/about/">徐云凯</a></h5>
                         <p>一只挑剔狗粮的纯种柴犬，最喜欢喝名叫Java的咖啡，不太喜欢JavaScript这种山寨咖啡， 跟隔壁名叫Python的宠物蛇是好朋友，对用php这种材料做的狗狗玩具过敏，尤其不能闻到yii的味道，一闻就吐。</p>
                     </div>
@@ -301,7 +283,30 @@
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
+    <a href="/2022/06/04/blog环境配置/">
+        <h2 class="post-title">
+            blog环境配置
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2022-06-04
+        </p>
+        
+        <div class="post-content-preview">
+            <p>
+                完美代替gitpage的个人博客方案：hexo + 第三方git托管 + 自建web服务器 + webhook自动部署基于hexo建立的博客站点，编写者需要在本地写好markdown格式的blog之后，由框架处理生成静态页面，随后通过git将静态页面发布到目标git服务器。如果git服务器选用g..
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
     <a href="/2021/11/03/22-小辣稽不再是一个人啦！/">
         <h2 class="post-title">
             22:小辣稽不再是一个人啦！
@@ -327,7 +332,7 @@
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2021/04/26/SSM框架搭建/">
         <h2 class="post-title">
             SSM框架搭建
@@ -354,7 +359,7 @@ IntelliJ IDEA 2020.2.1 (Ultimate Edition)Build #IU-202.6948.69, b..
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2021/03/08/windows-vs-opencv环境配置/">
         <h2 class="post-title">
             windows+vs+opencv环境配置
@@ -380,7 +385,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2020/11/02/21岁！/">
         <h2 class="post-title">
             21岁！
@@ -405,7 +410,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2020/07/19/以太坊与truffle开发平台环境搭建/">
         <h2 class="post-title">
             以太坊与truffle开发平台环境搭建
@@ -429,7 +434,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2020/05/08/服务器一键配置ssr/">
         <h2 class="post-title">
             服务器一键配置ssr
@@ -457,7 +462,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2020/05/07/当你买了一台新的ubuntu服务器（2）/">
         <h2 class="post-title">
             当你买了台新的ubuntu服务器(2)
@@ -483,7 +488,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2020/05/07/当你买了一台新的ubuntu服务器（1）/">
         <h2 class="post-title">
             当你买了台新的ubuntu服务器(1)
@@ -509,7 +514,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 <div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
+     style="background-image: url('')">
     <a href="/2019/11/02/小辣稽的第一篇博客：写在20岁生日之时/">
         <h2 class="post-title">
             小辣稽的第一篇博客：写在20岁生日之时
@@ -532,34 +537,15 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 
 
-<div class="post-preview "
-     style="background-image: url('/image/cover-v1.2.0m.jpg')">
-    <a href="/2019/11/02/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2019-11-02
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
 
 <!-- 翻页 pager -->
 
 <ul class="pager">
     
+    
+    <li class="next">
+        <a href="/page/2/">Older Posts &rarr;</a>
+    </li>
     
 </ul>
 
@@ -579,7 +565,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                 <div class="short-about">
                     <!--侧边栏头像-->
                     
-                    <img src="/image/icon.jpg" />
+                    <img src="/image/icon.jpg"/>
                     
                     <h5><a href="/about/">徐云凯</a></h5>
                     
@@ -589,14 +575,23 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                     <!-- SNS Link 社交 -->
                     <ul class="list-inline">
                         
-
+                        
+                        <li>
+                            <a target="_blank" href="https://twitter.com/MilkyWayShip">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                            </a>
+                        </li>
+                        
                         
                         <li>
                             <a target="_blank" href="https://www.zhihu.com/people/milkyship">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                </span>
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
                             </a>
                         </li>
                         
@@ -604,21 +599,10 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                         
                         <li>
                             <a target="_blank" href="http://weibo.com/6220050985">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        
-
-                        
-                        <li>
-                            <a target="_blank" href="https://twitter.com/shipMilky">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
                             </a>
                         </li>
                         
@@ -626,10 +610,10 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                         
                         <li>
                             <a target="_blank" href="https://www.facebook.com/100037456365241">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </span>
                             </a>
                         </li>
                         
@@ -637,10 +621,10 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                         
                         <li>
                             <a target="_blank" href="https://github.com/MilkyBoat">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
                             </a>
                         </li>
                         
@@ -657,7 +641,13 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                     
                     
                     <a href="/tags/#日常" title="日常"
-                        rel="3">日常</a>
+                       rel="3">日常</a>
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                     
@@ -672,17 +662,17 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                     
                     
                     <a href="/tags/#服务器" title="服务器"
-                        rel="3">服务器</a>
+                       rel="3">服务器</a>
                     
                     
                     
                     <a href="/tags/#运维" title="运维"
-                        rel="2">运维</a>
+                       rel="2">运维</a>
                     
                     
                     
                     <a href="/tags/#服务器配置" title="服务器配置"
-                        rel="3">服务器配置</a>
+                       rel="3">服务器配置</a>
                     
                     
                 </div>
@@ -694,6 +684,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
         </div>
     </div>
 </div>
+
     <!-- Footer -->
     <!-- Footer -->
 <footer>
@@ -705,7 +696,7 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
                 
                 
                     <li>
-                        <a target="_blank" href="https://twitter.com/shipMilky">
+                        <a target="_blank" href="https://twitter.com/MilkyWayShip">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -761,11 +752,12 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; 小辣稽 2021
+                    Copyright &copy; 小辣稽 2022
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
-                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                    Using theme <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="noopener">Anisina</a>,
+                    Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener">Coding Pages</a>
                 </p>
 
             </div>
@@ -830,16 +822,21 @@ step1：下载opencv集成包点击链接下载最新版本的opencv，下载好
 
 <!-- Baidu Tongji -->
 
+<script>
+    var _baId = '3d58d37e4e8ff3a5484bd4d6eaf7a347';
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
 
 <!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','','2.0.0');
-</script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

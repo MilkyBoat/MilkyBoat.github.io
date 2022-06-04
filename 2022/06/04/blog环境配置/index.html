@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="小辣稽严格挑剔狗粮的个人主页">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon"
+        href="/image/favicon.ico">
+    <link rel="alternate" type="application/atom+xml" title="小辣稽" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        小辣稽
+    </title>
+
+    <link rel="canonical" href="https://blog.milkyship.cn/2022/06/04/blog环境配置/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<style>
+    header.intro-header {
+        background-image: url('/image/cover.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+
+<body ontouchstart="" class="animated fadeIn">
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true"
+    data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    小辣稽
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/archives/">archives</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/categories/">categories</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/tags/">tags</a>
+                    </li>
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    //    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function () {
+                // prevent frequently toggle
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        } else {
+            // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+    <!-- Main Content -->
+    
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>blog环境配置</h1>
+                    
+                    <span class="meta">
+                         作者 徐云凯
+                        <span>
+                          日期 2022-06-04
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#blog"
+                           title="blog">blog</a>
+                        
+                        <a class="tag" href="/tags/#webhook"
+                           title="webhook">webhook</a>
+                        
+                        <a class="tag" href="/tags/#hexo"
+                           title="hexo">hexo</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            blog环境配置
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="完美代替gitpage的个人博客方案："><a href="#完美代替gitpage的个人博客方案：" class="headerlink" title="完美代替gitpage的个人博客方案："></a>完美代替gitpage的个人博客方案：</h1><h2 id="hexo-第三方git托管-自建web服务器-webhook自动部署"><a href="#hexo-第三方git托管-自建web服务器-webhook自动部署" class="headerlink" title="hexo + 第三方git托管 + 自建web服务器 + webhook自动部署"></a>hexo + 第三方git托管 + 自建web服务器 + webhook自动部署</h2><p>基于hexo建立的博客站点，编写者需要在本地写好markdown格式的blog之后，由框架处理生成静态页面，随后通过git将静态页面发布到目标git服务器。如果git服务器选用github的话，可以免费使用其gitpage服务作为web服务器。但是githu服务器在外网不够稳定，于是最佳方案变成了使用自建web服务器+通过webhook自动同步部署（或者简单一点定时clone）。</p>
+<hr>
+<h2 id="本地：hexo"><a href="#本地：hexo" class="headerlink" title="本地：hexo"></a>本地：hexo</h2><p>先装一个<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Nodejs</a>。安装完成后，如果命令行输入<code>node -v</code>能显示<code>nodejs</code>版本号，说明安装成功。</p>
+<p>然后安装<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">git</a>。同理，安装完成后，如果命令行输入<code>git --version</code>能显示<code>git</code>版本号，说明安装成功。</p>
+<p>然后给npm换个源，这个东西随时都在变，现场百度找最新的教程最管用。</p>
+<p>接下来是正式安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>完成后，如果<code>hexo -v</code>能输出一堆版本号就说明安装好了。</p>
+<p>接下来hexo会自动产生一个hello world博客页面，上面说明了如何使用，就像这篇<a href="/2019/11/02/hello-world/">hello-world</a></p>
+<p>这里介绍了一些基本的使用，比如使用<code>hexo new &quot;文章名&quot;</code>新建博文，使用<code>hexo g</code>渲染出静态页面，使用<code>hexo s</code>在本地<code>localhost:4000</code>预览web效果，这个命令可以用<code>hexo s -p 80</code>指定端口号为80，使用<code>hexo d</code>发布到git服务器（需要配置，详见后文<a href="#git服务器配置">git服务器配置</a>。</p>
+<p>如果你想了解更多，可以查阅<a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方文档</a></p>
+<hr>
+<h2 id="服务器：web-server-webhook-宝塔工具"><a href="#服务器：web-server-webhook-宝塔工具" class="headerlink" title="服务器：web server + webhook (宝塔工具)"></a>服务器：web server + webhook (宝塔工具)</h2><p>服务器方面，博客需要一个git服务器来存放博客文件，一个web服务器对外提供网页浏览服务，它们二者如果不是部署在同一台服务器上则需要一个webhook来实现自动同步。</p>
+<p>这里git服务器选用github，web服务器自建，设置webhook使得每次github仓库收到新提交时，web服务器都能立刻自动同步。</p>
+<h3 id="git服务器配置"><a href="#git服务器配置" class="headerlink" title="git服务器配置"></a>git服务器配置</h3><p>github/gitee均可，直接开个新仓库就行了，github的话还可以开gitpage直接让github充当博客的web服务器，但是最近github.io进了北越南的黑名单访问困难，推荐自建web服务器。</p>
+<p>当然git服务器也可以自建，但是毕竟自建服务器可能存在各种各样的不稳定因素，导致数据丢失等等极其严重的问题，推荐使用第三方git服务。</p>
+<p>总之你现在在git服务器上建立好了一个空白仓库。</p>
+<p>接下来在你的hexo项目根目录中找到<code>_config.yaml</code>，在末尾找到<code>Deployment</code>配置项，填入你的repo地址即可。</p>
+<h3 id="web服务器配置"><a href="#web服务器配置" class="headerlink" title="web服务器配置"></a>web服务器配置</h3><p>如果不想打理，直接装一个<a href="https://www.bt.cn/new/download.html" target="_blank" rel="noopener">宝塔</a>。用nginx作为静态网站服务器。新建一个纯静态网站即可，建好之后复制一下网站部署根目录备用。</p>
+<h3 id="webhook配置"><a href="#webhook配置" class="headerlink" title="webhook配置"></a>webhook配置</h3><p>这里使用宝塔Linux面板的WebHook工具来实现自动部署。</p>
+<p>在面板的软件商店搜索webhook，安装后在工具界面点击<code>添加</code>。</p>
+<p><img src="/2022/06/04/blog%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/bt_webhook.png" alt="宝塔面板"></p>
+<p>WebHook名称随便写，脚本框粘贴以下代码【注意修改里面的两个地址】</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">echo</span> <span class="string">""</span></span><br><span class="line"><span class="comment">#输出当前时间</span></span><br><span class="line">date --date=<span class="string">'0 days ago'</span> <span class="string">"+%Y-%m-%d %H:%M:%S"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Start"</span></span><br><span class="line"><span class="comment">#判断宝塔WebHook参数是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ ! -n <span class="string">"<span class="variable">$1</span>"</span> ];</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"param参数错误"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"End"</span></span><br><span class="line">    <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment">#git项目路径</span></span><br><span class="line">gitPath=<span class="string">"/data/wwwroot/blog.milkyship.cn"</span>  <span class="comment"># 【这里填入网站的部署路径】</span></span><br><span class="line"><span class="comment">#git 网址</span></span><br><span class="line">gitHttp=<span class="string">"https://github.com/MilkyBoat/<span class="variable">$1</span>.git"</span>  <span class="comment"># 【这里填入你的git url】</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Web站点路径：<span class="variable">$gitPath</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#判断项目路径是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d <span class="string">"<span class="variable">$gitPath</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"该项目路径不存在"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"新建项目目录"</span></span><br><span class="line">    mkdir <span class="variable">$gitPath</span></span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$gitPath</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#判断是否存在git目录</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d <span class="string">".git"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"在该目录下克隆 git"</span></span><br><span class="line">    sudo git <span class="built_in">clone</span> <span class="variable">$gitHttp</span> gittemp</span><br><span class="line">    sudo mv gittemp/.git .</span><br><span class="line">    sudo rm -rf gittemp</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"拉取最新的项目文件"</span></span><br><span class="line"><span class="comment">#sudo git reset --hard origin/master</span></span><br><span class="line">sudo git pull        </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"设置目录权限"</span></span><br><span class="line">sudo chown -R www:www <span class="variable">$gitPath</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"End"</span></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<p>这一代码将会在WebHook触发的时候检查有无对应目录，并且拉取对应仓库，具体使用哪个仓库你可以通过在WebHook发送端设置参数来完成。</p>
+<p>接下来，在刚刚添加的WebHook里点击<code>查看密钥</code></p>
+<p><img src="/2022/06/04/blog%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/res_webhook.png" alt="密钥界面"></p>
+<p>这里面密钥用于保证你的WebHook不会被错误的触发或者盗用，url的get请求参数可以被webhook识别，在脚本中用<code>$1</code>访问。</p>
+<p>然后前往github配置webhook。</p>
+<p><img src="/2022/06/04/blog%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/github_webhook.png" alt="github webhook配置"></p>
+<p>这里的<code>Payload Url</code>填入刚刚的url，<code>Secret</code>填入密钥，尤其要注意<code>Content type</code>要选择json，否则可能被nginx拦截（根据你宝塔web服务器的配置）。填好之后点击<code>Add webhook</code>即可。接下来github回立刻发送一次请求进行测试，如果你在webhooks列表里面看到一个绿色√，那么webhook就已经配置好了，点<code>edit</code> - <code>Recent Deliveries</code>可以看到近期webhook触发结果，正常情况应当是http200，返回的http response body为<code>{&quot;code&quot;: 1}</code>。</p>
+<p><img src="/2022/06/04/blog%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/suc_webhook.png" alt="正确配置的webhook"></p>
+<h3 id><a href="#" class="headerlink" title></a></h3><p>至此，一个能够自动同步部署、完美代替gitpage的个人博客站点建立完成。</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/11/03/22-小辣稽不再是一个人啦！/" data-toggle="tooltip" data-placement="top"
+                           title="22:小辣稽不再是一个人啦！">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#完美代替gitpage的个人博客方案："><span class="toc-text">完美代替gitpage的个人博客方案：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-第三方git托管-自建web服务器-webhook自动部署"><span class="toc-text">hexo + 第三方git托管 + 自建web服务器 + webhook自动部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地：hexo"><span class="toc-text">本地：hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器：web-server-webhook-宝塔工具"><span class="toc-text">服务器：web server + webhook (宝塔工具)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git服务器配置"><span class="toc-text">git服务器配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web服务器配置"><span class="toc-text">web服务器配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webhook配置"><span class="toc-text">webhook配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#blog"
+                           title="blog">blog</a>
+                        
+                        <a class="tag" href="/tags/#webhook"
+                           title="webhook">webhook</a>
+                        
+                        <a class="tag" href="/tags/#hexo"
+                           title="hexo">hexo</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/MilkyWayShip">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/milkyship">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/6220050985">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/100037456365241">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/MilkyBoat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 小辣稽 2022
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Using theme <a href="https://github.com/Haojen/hexo-theme-Anisina" target="_blank" rel="noopener">Anisina</a>,
+                    Hosted by <a href="https://pages.coding.me" target="_blank" rel="noopener">Coding Pages</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://blog.milkyship.cn/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    var _baId = '3d58d37e4e8ff3a5484bd4d6eaf7a347';
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- swiftype -->
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!--wechat title img-->
+    <img class="wechat-title-img" src="/image/icon.jpg">
+</body>
+
+</html>
