@@ -202,13 +202,13 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/milkyboat/milkyboat.github.io.git
+  repo: https://github.com/MilkyBoat/MilkyBoat.github.io.git
   branch: master
 
 # BackupFiles
 backup:
   type: git
-  message: backup my blog of https://milkyboat.github.io/
+  message: backup my blog of https://MilkyBoat.github.io/
   repository:
 	# 你的github仓库地址,备份分支名
-	github: https://github.com/milkyboat/milkyboat.github.io.git,backup
+	github: https://github.com/MilkyBoat/MilkyBoat.github.io.git,backup
