@@ -32,10 +32,10 @@ permalink_defaults:
 
 # SNS settings
 # RSS:
-weibo_username: 
+weibo_username: "6220050985"
 zhihu_username: "小辣稽"
 github_username: "MilkyBoat"
-twitter_username: "milkyboat"
+twitter_username: "MilkyWayShip"
 facebook_username:  
 linkedin_username:  
 
@@ -66,7 +66,7 @@ valine:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id:
+ba_track_id: 3d58d37e4e8ff3a5484bd4d6eaf7a347
 # Google Analytics
 ga_track_id:             # Format: UA-xxxxxx-xx
 ga_domain:
@@ -161,7 +161,7 @@ clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
 
 # post default images
 post-default-img: "/image/cover-v1.2.0.jpg" #博文默认的图片
-post-default-img-mobile: #移动端显示的图片
+post-default-img-mobile: "/image/cover-v1.2.0m.jpg" #移动端显示的图片
 
 # search api , set your custom key
 swiftype_key: 
