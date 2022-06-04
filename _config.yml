@@ -9,10 +9,9 @@ description: 小辣稽严格挑剔狗粮的个人主页
 keywords: 
 	- blog
 	- hexo
-	- javascript
 author: 徐云凯
 language: zh-cn
-timezone:
+timezone: 
 SEOTitle: 小辣稽
 header-img: /image/cover.jpg
 email: 1214208054@qq.com

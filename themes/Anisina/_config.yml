@@ -166,7 +166,6 @@ post-default-img-mobile: #移动端显示的图片
 # search api , set your custom key
 swiftype_key: 
 
-
 # archive page title 
 archive:
     title: archives
