@@ -88,15 +88,16 @@ gitPath="/data/wwwroot/blog.milkyship.cn"  # 【这里填入网站的部署路�
 #git 网址
 gitHttp="https://github.com/MilkyBoat/$1.git"  # 【这里填入你的git url】
 echo "Web站点路径：$gitPath"
+echo "git url：$gitHttp"
 
 #判断项目路径是否存在
 if [ ! -d "$gitPath" ]; then
     echo "该项目路径不存在"
     echo "新建项目目录"
     mkdir $gitPath
-    cd $gitPath
 fi
 
+cd $gitPath
 #判断是否存在git目录
 if [ ! -d ".git" ]; then
     echo "在该目录下克隆 git"
